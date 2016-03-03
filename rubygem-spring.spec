@@ -5,7 +5,7 @@
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.4.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Rails application preloader
 Group: Development/Languages
 License: MIT
@@ -18,7 +18,7 @@ Source1: rubygem-spring-1.3.6-tests.tar.gz
 Requires:      %{?scl_prefix_ruby}ruby(release)
 Requires:      %{?scl_prefix_ruby}ruby(rubygems)
 # Needed by `spring status`
-Requires:      %{_bindir}/ps
+Requires:      ps
 BuildRequires: %{?scl_prefix_ruby}ruby(release)
 BuildRequires: %{?scl_prefix_ruby}rubygems-devel
 BuildRequires: %{?scl_prefix_ruby}rubygem(minitest)
@@ -97,6 +97,9 @@ popd
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Thu Mar 03 2016 Pavel Valena <pvalena@redhat.com> - 1.4.0-4
+- Fix ps Require
+
 * Thu Mar 03 2016 Pavel Valena <pvalena@redhat.com> - 1.4.0-3
 - Update to 1.4.0
 
